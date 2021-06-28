@@ -1,4 +1,4 @@
-﻿if (!(test-path -path "C:\download\final")){New-Item -ItemType "directory" -Path "C:\download\final\"}
+if (!(test-path -path "C:\download\final")){New-Item -ItemType "directory" -Path "C:\download\final\"}
 if (!(test-path -path "C:\download\prased")){New-Item -ItemType "directory" -Path "C:\download\prased\"}
 
 
@@ -11,12 +11,12 @@ $list=Get-Content $destination
 "#Kevin's easylist" | Out-File $final_dest
 foreach ($item in $list)
 {
-    if(($item.indexof("||") -eq 0) -and ($item.indexof("^") -eq $item.Length - 1) -and ($item.indexof("*") -eq -1) ){
+    if(($item.indexof("||") -eq 0) -and ($item.indexof("^") -eq $item.Length - 1) -and ($item.indexof("*") -eq -1) -and ($item.indexof("/") -eq -1)){
     $url = $item.Substring(2, $item.indexof("^") -2)
     "host-suffix, " + $url + ", reject" | Out-File $final_dest -Append
     }
 
-    if(($item.indexof("||") -eq 0) -and ($item.indexof("third-party") -eq $item.Length - 11) -and ($item.indexof("^") -ne -1) -and ($item.indexof("*") -eq -1) ){
+    if(($item.indexof("||") -eq 0) -and ($item.indexof("third-party") -eq $item.Length - 11) -and ($item.indexof("^") -ne -1) -and ($item.indexof("*") -eq -1) -and ($item.indexof("/") -eq -1)){
     $url = $item.Substring(2, $item.indexof("^") -2)
     "host-suffix, " + $url + ", reject" | Out-File $final_dest -Append
     }
@@ -32,12 +32,12 @@ $list=Get-Content $destination
 "#Kevin's easyprivacy.txt" | Out-File $final_dest
 foreach ($item in $list)
 {
-    if(($item.indexof("||") -eq 0) -and ($item.indexof("^") -eq $item.Length - 1) -and ($item.indexof("*") -eq -1) ){
+    if(($item.indexof("||") -eq 0) -and ($item.indexof("^") -eq $item.Length - 1) -and ($item.indexof("*") -eq -1) -and ($item.indexof("/") -eq -1)){
     $url = $item.Substring(2, $item.indexof("^") -2)
     "host-suffix, " + $url + ", reject" | Out-File $final_dest -Append
     }
 
-    if(($item.indexof("||") -eq 0) -and ($item.indexof("third-party") -eq $item.Length - 11) -and ($item.indexof("^") -ne -1) -and ($item.indexof("*") -eq -1) ){
+    if(($item.indexof("||") -eq 0) -and ($item.indexof("third-party") -eq $item.Length - 11) -and ($item.indexof("^") -ne -1) -and ($item.indexof("*") -eq -1) -and ($item.indexof("/") -eq -1)){
     $url = $item.Substring(2, $item.indexof("^") -2)
     "host-suffix, " + $url + ", reject" | Out-File $final_dest -Append
     }
@@ -53,12 +53,12 @@ $list=Get-Content $destination
 "#Kevin's fanboy-cookiemonster" | Out-File $final_dest
 foreach ($item in $list)
 {
-    if(($item.indexof("||") -eq 0) -and ($item.indexof("^") -eq $item.Length - 1) -and ($item.indexof("*") -eq -1) ){
+    if(($item.indexof("||") -eq 0) -and ($item.indexof("^") -eq $item.Length - 1) -and ($item.indexof("*") -eq -1) -and ($item.indexof("/") -eq -1)){
     $url = $item.Substring(2, $item.indexof("^") -2)
     "host-suffix, " + $url + ", reject" | Out-File $final_dest -Append
     }
 
-    if(($item.indexof("||") -eq 0) -and ($item.indexof("third-party") -eq $item.Length - 11) -and ($item.indexof("^") -ne -1) -and ($item.indexof("*") -eq -1) ){
+    if(($item.indexof("||") -eq 0) -and ($item.indexof("third-party") -eq $item.Length - 11) -and ($item.indexof("^") -ne -1) -and ($item.indexof("*") -eq -1) -and ($item.indexof("/") -eq -1)){
     $url = $item.Substring(2, $item.indexof("^") -2)
     "host-suffix, " + $url + ", reject" | Out-File $final_dest -Append
     }
@@ -75,12 +75,12 @@ $list=Get-Content $destination
 "#Kevin's fanboy-annoyance" | Out-File $final_dest
 foreach ($item in $list)
 {
-    if(($item.indexof("||") -eq 0) -and ($item.indexof("^") -eq $item.Length - 1) -and ($item.indexof("*") -eq -1) ){
+    if(($item.indexof("||") -eq 0) -and ($item.indexof("^") -eq $item.Length - 1) -and ($item.indexof("*") -eq -1) -and ($item.indexof("/") -eq -1)){
     $url = $item.Substring(2, $item.indexof("^") -2)
     "host-suffix, " + $url + ", reject" | Out-File $final_dest -Append
     }
 
-    if(($item.indexof("||") -eq 0) -and ($item.indexof("third-party") -eq $item.Length - 11) -and ($item.indexof("^") -ne -1) -and ($item.indexof("*") -eq -1) ){
+    if(($item.indexof("||") -eq 0) -and ($item.indexof("third-party") -eq $item.Length - 11) -and ($item.indexof("^") -ne -1) -and ($item.indexof("*") -eq -1) -and ($item.indexof("/") -eq -1)){
     $url = $item.Substring(2, $item.indexof("^") -2)
     "host-suffix, " + $url + ", reject" | Out-File $final_dest -Append
     }
@@ -97,12 +97,12 @@ $list=Get-Content $destination
 "#Kevin's adGuard basic" | Out-File $final_dest
 foreach ($item in $list)
 {
-    if(($item.indexof("||") -eq 0) -and ($item.indexof("^") -eq $item.Length - 1) -and ($item.indexof("*") -eq -1) ){
+    if(($item.indexof("||") -eq 0) -and ($item.indexof("^") -eq $item.Length - 1) -and ($item.indexof("*") -eq -1) -and ($item.indexof("/") -eq -1)){
     $url = $item.Substring(2, $item.indexof("^") -2)
     "host-suffix, " + $url + ", reject" | Out-File $final_dest -Append
     }
 
-    if(($item.indexof("||") -eq 0) -and ($item.indexof("third-party") -eq $item.Length - 11) -and ($item.indexof("^") -ne -1) -and ($item.indexof("*") -eq -1) ){
+    if(($item.indexof("||") -eq 0) -and ($item.indexof("third-party") -eq $item.Length - 11) -and ($item.indexof("^") -ne -1) -and ($item.indexof("*") -eq -1) -and ($item.indexof("/") -eq -1)){
     $url = $item.Substring(2, $item.indexof("^") -2)
     "host-suffix, " + $url + ", reject" | Out-File $final_dest -Append
     }
@@ -119,12 +119,12 @@ $list=Get-Content $destination
 "#Kevin's Tracking Protection filter" | Out-File $final_dest
 foreach ($item in $list)
 {
-    if(($item.indexof("||") -eq 0) -and ($item.indexof("^") -eq $item.Length - 1) -and ($item.indexof("*") -eq -1) ){
+    if(($item.indexof("||") -eq 0) -and ($item.indexof("^") -eq $item.Length - 1) -and ($item.indexof("*") -eq -1) -and ($item.indexof("/") -eq -1)){
     $url = $item.Substring(2, $item.indexof("^") -2)
     "host-suffix, " + $url + ", reject" | Out-File $final_dest -Append
     }
 
-    if(($item.indexof("||") -eq 0) -and ($item.indexof("third-party") -eq $item.Length - 11) -and ($item.indexof("^") -ne -1) -and ($item.indexof("*") -eq -1) ){
+    if(($item.indexof("||") -eq 0) -and ($item.indexof("third-party") -eq $item.Length - 11) -and ($item.indexof("^") -ne -1) -and ($item.indexof("*") -eq -1) -and ($item.indexof("/") -eq -1)){
     $url = $item.Substring(2, $item.indexof("^") -2)
     "host-suffix, " + $url + ", reject" | Out-File $final_dest -Append
     }
@@ -140,12 +140,12 @@ $list=Get-Content $destination
 "#Kevin's URL Tracking filter" | Out-File $final_dest
 foreach ($item in $list)
 {
-    if(($item.indexof("||") -eq 0) -and ($item.indexof("^") -eq $item.Length - 1) -and ($item.indexof("*") -eq -1) ){
+    if(($item.indexof("||") -eq 0) -and ($item.indexof("^") -eq $item.Length - 1) -and ($item.indexof("*") -eq -1) -and ($item.indexof("/") -eq -1)){
     $url = $item.Substring(2, $item.indexof("^") -2)
     "host-suffix, " + $url + ", reject" | Out-File $final_dest -Append
     }
 
-    if(($item.indexof("||") -eq 0) -and ($item.indexof("third-party") -eq $item.Length - 11) -and ($item.indexof("^") -ne -1) -and ($item.indexof("*") -eq -1) ){
+    if(($item.indexof("||") -eq 0) -and ($item.indexof("third-party") -eq $item.Length - 11) -and ($item.indexof("^") -ne -1) -and ($item.indexof("*") -eq -1) -and ($item.indexof("/") -eq -1)){
     $url = $item.Substring(2, $item.indexof("^") -2)
     "host-suffix, " + $url + ", reject" | Out-File $final_dest -Append
     }
@@ -161,12 +161,12 @@ $list=Get-Content $destination
 "#Kevin's Chinese filter" | Out-File $final_dest
 foreach ($item in $list)
 {
-    if(($item.indexof("||") -eq 0) -and ($item.indexof("^") -eq $item.Length - 1) -and ($item.indexof("*") -eq -1) ){
+    if(($item.indexof("||") -eq 0) -and ($item.indexof("^") -eq $item.Length - 1) -and ($item.indexof("*") -eq -1) -and ($item.indexof("/") -eq -1)){
     $url = $item.Substring(2, $item.indexof("^") -2)
     "host-suffix, " + $url + ", reject" | Out-File $final_dest -Append
     }
 
-    if(($item.indexof("||") -eq 0) -and ($item.indexof("third-party") -eq $item.Length - 11) -and ($item.indexof("^") -ne -1) -and ($item.indexof("*") -eq -1) ){
+    if(($item.indexof("||") -eq 0) -and ($item.indexof("third-party") -eq $item.Length - 11) -and ($item.indexof("^") -ne -1) -and ($item.indexof("*") -eq -1) -and ($item.indexof("/") -eq -1)){
     $url = $item.Substring(2, $item.indexof("^") -2)
     "host-suffix, " + $url + ", reject" | Out-File $final_dest -Append
     }
