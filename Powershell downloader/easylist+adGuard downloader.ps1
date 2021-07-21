@@ -173,11 +173,12 @@ foreach ($item in $list)
 }
 
 
-#Merge
-Get-Content C:\download\prased\adGuard-basic.txt, C:\download\prased\adGuard-Chinese.txt, C:\download\prased\easylist.txt | Set-Content C:\download\final\easylist+adGuard_temp.txt
-gc "C:\download\final\easylist+adGuard_temp.txt" | get-unique > C:\download\final\\easylist+adGuard.txt
-Remove-Item "C:\download\final\easylist+adGuard_temp.txt"
 
-Get-Content C:\download\prased\easyprivacy.txt, C:\download\prased\fanboy-annoyance.txt, C:\download\prased\fanboy-cookiemonster.txt, C:\download\prased\adGuard-Tracking_Protection.txt, C:\download\prased\adGuard-URL_Tracking.txt | Set-Content C:\download\final\easyprivacy+adGuard-privacy_temp.txt
-gc "C:\download\final\easyprivacy+adGuard-privacy_temp.txt" | get-unique > C:\download\final\easyprivacy+adGuard-privacy.txt
-Remove-Item "C:\download\final\easyprivacy+adGuard-privacy_temp.txt"
+#Merge
+Get-Content C:\download\prased\adGuard-basic.txt, C:\download\prased\adGuard-Chinese.txt, C:\download\prased\easylist.txt | Set-Content -Encoding UTF8 C:\download\final\adblock_combined_temp.txt
+gc "C:\download\final\adblock_combined_temp.txt" | get-unique | Set-Content -Encoding UTF8 C:\download\final\\adblock_combined.txt
+Remove-Item "C:\download\final\adblock_combined_temp.txt"
+
+Get-Content C:\download\prased\easyprivacy.txt, C:\download\prased\fanboy-annoyance.txt, C:\download\prased\fanboy-cookiemonster.txt, C:\download\prased\adGuard-Tracking_Protection.txt, C:\download\prased\adGuard-URL_Tracking.txt | Set-Content -Encoding UTF8 C:\download\final\privacy_combined_temp.txt
+gc "C:\download\final\privacy_combined_temp.txt" | get-unique | Set-Content -Encoding UTF8 C:\download\final\privacy_combined.txt
+Remove-Item "C:\download\final\privacy_combined_temp.txt"
