@@ -14,4 +14,4 @@ jobs:
     - uses: actions/Quantumult-X@v1
     - name: Run a one-line script
       run: .\Powershell downloader\easylist+adGuard downloader.ps1
-      shell: powershell
+      shell: pwsh
