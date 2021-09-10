@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build:
+
+    runs-on: windows-2019
+
+    steps:
+    - uses: actions/Quantumult-X@v1
+    - name: Run a one-line script
+      run: .\Powershell downloader\easylist+adGuard downloader.ps1
+      shell: powershell
